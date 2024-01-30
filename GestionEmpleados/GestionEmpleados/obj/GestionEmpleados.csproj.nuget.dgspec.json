@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diheg\\OneDrive\\Escritorio\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj": {}
+    "D:\\MisProyectos\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diheg\\OneDrive\\Escritorio\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj": {
+    "D:\\MisProyectos\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diheg\\OneDrive\\Escritorio\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj",
+        "projectUniqueName": "D:\\MisProyectos\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj",
         "projectName": "GestionEmpleados",
-        "projectPath": "C:\\Users\\diheg\\OneDrive\\Escritorio\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj",
-        "packagesPath": "C:\\Users\\diheg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diheg\\OneDrive\\Escritorio\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\obj\\",
+        "projectPath": "D:\\MisProyectos\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\GestionEmpleados.csproj",
+        "packagesPath": "C:\\Users\\nicoo\\.nuget\\packages\\",
+        "outputPath": "D:\\MisProyectos\\Gestion-Empleados\\GestionEmpleados\\GestionEmpleados\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\diheg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicoo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -38,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -63,21 +62,27 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[8.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -103,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

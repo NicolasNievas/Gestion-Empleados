@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GestionEmpleados",
+    "\\GestionEmpleados\\GestionEmpleados",
+    "\\GestionEmpleados\\GestionEmpleados\\Controllers",
+    "\\GestionEmpleados\\GestionEmpleados\\Migrations"
   ],
+  "SelectedNode": "\\GestionEmpleados\\GestionEmpleados\\Migrations\\ApplicationContext.cs",
   "PreviewInSolutionExplorer": false
 }
