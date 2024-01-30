@@ -8,19 +8,19 @@ namespace GestionEmpleados.CQRS.Queries
 {
     public class GetCharges
     {
-        public class GetCargoQuery : IRequest<List<ChargeDTO>>
+        public class GetChargesQuery : IRequest<List<ChargeDTO>>
         {
         }
-        public class GetCargosQueryHandler : IRequestHandler<GetCargoQuery, List<ChargeDTO>>
+        public class GetChargesQueryHandler : IRequestHandler<GetChargesQuery, List<ChargeDTO>>
         {
             private readonly ApplicationContext _context;
             private readonly IMapper _mapper;
-            public GetCargosQueryHandler(ApplicationContext context, IMapper mapper)
+            public GetChargesQueryHandler(ApplicationContext context, IMapper mapper)
             {
                 _context = context;
                 _mapper = mapper;
             }
-            public async Task<List<ChargeDTO>> Handle(GetCargoQuery request, CancellationToken cancellationToken)
+            public async Task<List<ChargeDTO>> Handle(GetChargesQuery request, CancellationToken cancellationToken)
             {
                 var charges = await _context.Charges.ToListAsync();
                 return _mapper.Map<List<ChargeDTO>>(charges);
