@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
+using GestionEmpleados.CQRS.Commands;
 using GestionEmpleados.DTO;
 using GestionEmpleados.Models;
+using static GestionEmpleados.CQRS.Commands.PostCharge;
+using static GestionEmpleados.CQRS.Commands.PostCity;
 
 namespace GestionEmpleados.Mapper
 {
@@ -13,6 +16,8 @@ namespace GestionEmpleados.Mapper
             CreateMap<Sucursal, SucursalDTO>().ReverseMap();
             CreateMap<Employee, EmployeeDTO>().ReverseMap();
             CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<Charge, PostChargeCommand>().ReverseMap();
+            CreateMap<City, PostCityCommand>().ReverseMap();
         }
     }
 }

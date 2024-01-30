@@ -1,6 +1,10 @@
+using FluentValidation;
+using GestionEmpleados.CQRS.Commands;
 using GestionEmpleados.Migrations;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using static GestionEmpleados.CQRS.Commands.PostCharge;
+using static GestionEmpleados.CQRS.Commands.PostCity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +26,10 @@ builder.Services.AddMediatR(config =>
 {
     config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
 });
+
+builder.Services.AddScoped<IValidator<PostChargeCommand>, PostChargeCommandValidator>();
+builder.Services.AddScoped<IValidator<PostCityCommand>, PostCityCommandValidator>();
+
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
 {
