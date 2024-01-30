@@ -22,7 +22,8 @@ namespace GestionEmpleados.CQRS.Queries
             }
             public async Task<List<SucursalDTO>> Handle(GetSucursalQuery request, CancellationToken cancellationToken)
             {
-                var sucursales = await _context.Sucursals.ToListAsync();
+                var sucursales = await _context.Sucursals.Include(x => x.City).ToListAsync();
+                await _context.SaveChangesAsync();
                 return _mapper.Map<List<SucursalDTO>>(sucursales);
             }
         }

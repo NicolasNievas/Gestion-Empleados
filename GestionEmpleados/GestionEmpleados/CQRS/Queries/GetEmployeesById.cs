@@ -48,7 +48,12 @@ namespace GestionEmpleados.CQRS.Queries
                 }
                 else
                 {
-                    var employees = await _context.Employees.Include(e => e.Charge).Include(e => e.Sucursal.City).FirstOrDefaultAsync(e => e.Id == request.Id);
+                    var employees = await _context.Employees.Include(e => e.Charge).Include(e => e.Sucursal.City)
+                        .Include(e => e.Jefe)
+                        .ThenInclude(jefe => jefe.Charge) 
+                        .Include(e => e.Jefe) 
+                        .ThenInclude(jefe => jefe.Jefe) 
+                        .ThenInclude(jefe => jefe.Charge).FirstOrDefaultAsync(e => e.Id == request.Id);
                     return _mapper.Map<EmployeeDTO>(employees);
                 }
             }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static GestionEmpleados.CQRS.Queries.GetEmployees;
 using static GestionEmpleados.CQRS.Queries.GetCharges;
-using static GestionEmpleados.CQRS.Queries.Users;
+using static GestionEmpleados.CQRS.Queries.GetUsers;
 using static GestionEmpleados.CQRS.Queries.GetSucursales;
 using static GestionEmpleados.CQRS.Queries.GetCitys;
 using static GestionEmpleados.CQRS.Queries.GetEmployeesById;

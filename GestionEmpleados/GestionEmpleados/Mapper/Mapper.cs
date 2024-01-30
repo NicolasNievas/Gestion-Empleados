@@ -4,6 +4,7 @@ using GestionEmpleados.DTO;
 using GestionEmpleados.Models;
 using static GestionEmpleados.CQRS.Commands.PostCharge;
 using static GestionEmpleados.CQRS.Commands.PostCity;
+using static GestionEmpleados.CQRS.Commands.PostEmployee;
 
 namespace GestionEmpleados.Mapper
 {
@@ -18,6 +19,7 @@ namespace GestionEmpleados.Mapper
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<Charge, PostChargeCommand>().ReverseMap();
             CreateMap<City, PostCityCommand>().ReverseMap();
+            CreateMap<Employee, PostEmployeeCommand>().ReverseMap();
         }
     }
 }

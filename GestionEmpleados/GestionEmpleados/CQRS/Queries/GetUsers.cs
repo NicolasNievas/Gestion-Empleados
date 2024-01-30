@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GestionEmpleados.CQRS.Queries
 {
-    public class Users
+    public class GetUsers
     {
         public class GetUserQuery : IRequest<List<UserDTO>>
         {

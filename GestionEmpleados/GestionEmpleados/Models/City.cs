@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public virtual ICollection<Employee> Employees { get; set; } 
+        public virtual ICollection<Sucursal> Sucursals { get; set; } 
     }
 }
