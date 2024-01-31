@@ -3,6 +3,7 @@ using GestionEmpleados.CQRS.Commands;
 using GestionEmpleados.Migrations;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using static GestionEmpleados.CQRS.Commands.NewUser;
 using static GestionEmpleados.CQRS.Commands.PostCharge;
 using static GestionEmpleados.CQRS.Commands.PostCity;
 using static GestionEmpleados.CQRS.Commands.PostEmployee;
@@ -32,8 +33,8 @@ builder.Services.AddMediatR(config =>
 builder.Services.AddScoped<IValidator<PostChargeCommand>, PostChargeCommandValidator>();
 builder.Services.AddScoped<IValidator<PostCityCommand>, PostCityCommandValidator>();
 builder.Services.AddScoped<IValidator<PostEmployeeCommand>, PostEmployeeCommandValidator>(); 
-    builder.Services.AddScoped<IValidator<PutEmployeeCommand>, PutEmployeeCommandValidator>();
-
+builder.Services.AddScoped<IValidator<PutEmployeeCommand>, PutEmployeeCommandValidator>();
+builder.Services.AddScoped<IValidator<NewUserCommand>, NewUserCommandValidator>();
 
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
