@@ -1,0 +1,58 @@
+<!-- create.component.html -->
+
+<div class="container mt-5">
+    <div class="registro-empleado-container">
+      <h2>Crear Empleado</h2>
+      <form [formGroup]="empleadoForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" formControlName="nombre" class="form-control" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" id="apellido" formControlName="apellido" class="form-control" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="dni" class="form-label">DNI:</label>
+            <input type="text" id="dni" formControlName="dni" class="form-control" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cargoId" class="form-label">Cargo:</label>
+            <select id="cargoId" formControlName="cargoId" class="form-select" required>
+              <option value="" selected disabled>Seleccionar Cargo</option>
+              <option *ngFor="let cargo of cargos" [value]="cargo.id">{{ cargo.name }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="sucursalId" class="form-label">Sucursal:</label>
+            <select id="sucursalId" formControlName="sucursalId" class="form-select" required (change)="onSucursalChange()">
+              <option value="" selected disabled>Seleccionar Sucursal</option>
+              <option *ngFor="let sucursal of sucursales" [value]="sucursal.id">{{ sucursal.name }}</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="ciudad" class="form-label">Ciudad:</label>
+            <input type="text" id="ciudad" formControlName="ciudad" class="form-control" readonly>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="jefeId" class="form-label">Jefe:</label>
+            <select id="jefeId" formControlName="jefeId" class="form-select">
+              <option value="" selected disabled>Seleccionar Jefe</option>
+              <option *ngFor="let jefe of jefes" [value]="jefe.id">{{ jefe.name }} {{ jefe.lastName }}</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="hora" class="form-label">Hora:</label>
+            <input type="time" id="hora" formControlName="hora" class="form-control" readonly>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Empleado</button>
+      </form>
+    </div>
+  </div>
+  

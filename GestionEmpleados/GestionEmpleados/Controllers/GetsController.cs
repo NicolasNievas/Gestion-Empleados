@@ -21,37 +21,37 @@ namespace GestionEmpleados.Controllers
             _mediator = mediator;
         }
         [HttpGet]
-        [Route("/Get/Employees")]
+        [Route("Employees")]
         public async Task<List<EmployeeDTO>> GetEmployees()
         {
             return await _mediator.Send(new GetEmployeeQuery());
         }
         [HttpGet]
-        [Route("/Get/Charges")]
+        [Route("Charges")]
         public async Task<List<ChargeDTO>> GetCharges()
         {
             return await _mediator.Send(new GetChargesQuery());
         }
         [HttpGet]
-        [Route("/Get/Users")]
+        [Route("Users")]
         public async Task<List<UserDTO>> GetUsers()
         {
             return await _mediator.Send(new GetUserQuery());
         }
         [HttpGet]
-        [Route("/Get/Sucursales")]
+        [Route("Sucursales")]
         public async Task<List<SucursalDTO>> GetSucursales()
         {
             return await _mediator.Send(new GetSucursalQuery());
         }
         [HttpGet]
-        [Route("Get/City")]
+        [Route("City")]
         public async Task<List<CityDTO>> GetCities()
         {
             return await _mediator.Send(new GetCityQuery());
         }
         [HttpGet]
-        [Route("/Get/Employee/{id}")]
+        [Route("Employee/{id}")]
         public async Task<EmployeeDTO> GetEmployee(int id)
         {
             return await _mediator.Send(new GetEmployeeByIdQuery { Id = id });

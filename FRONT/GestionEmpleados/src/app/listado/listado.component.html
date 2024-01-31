@@ -1,0 +1,32 @@
+<!-- lista-empleados.component.html -->
+
+<div class="container mt-5">
+    <div class="lista-empleados-container">
+      <h2>Listado de Empleados</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- <th>ID</th> -->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cargo</th>
+            <th>Sucursal</th>
+            <th>DNI</th>
+            <th>Jefe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados">
+            <!-- <td>{{ empleado.id }}</td> -->
+            <td>{{ empleado.name }}</td>
+            <td>{{ empleado.lastName }}</td>
+            <td>{{ empleado.charge.name }}</td>
+            <td>{{ empleado.sucursal.name }}</td>
+            <td>{{ empleado.dni }}</td>
+            <td>{{ empleado.jefe ? empleado.jefe.name + ' ' + empleado.jefe.lastName : 'N/A' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

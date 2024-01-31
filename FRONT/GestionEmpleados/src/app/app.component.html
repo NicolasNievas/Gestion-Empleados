@@ -1,0 +1,26 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #13151c;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Navbar Brand" style="height: 30px; width: 30px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="/create" href="#" style="color: #ffeba7;">Registrar</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="/listado" href="#" style="color: #ffeba7;">Listado</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
