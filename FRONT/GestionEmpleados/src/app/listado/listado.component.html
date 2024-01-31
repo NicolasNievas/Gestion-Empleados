@@ -13,6 +13,7 @@
             <th>Sucursal</th>
             <th>DNI</th>
             <th>Jefe</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@
             <td>{{ empleado.sucursal.name }}</td>
             <td>{{ empleado.dni }}</td>
             <td>{{ empleado.jefe ? empleado.jefe.name + ' ' + empleado.jefe.lastName : 'N/A' }}</td>
+            <div class="acciones-container">
+              <button class="btn btn-danger btn-eliminar" (click)="confirmarEliminacion(empleado.id)">Eliminar</button>
+              <button class="btn btn-warning btn-editar" (click)="editarEmpleado(empleado.id)">Editar</button>
+            </div>
           </tr>
         </tbody>
       </table>

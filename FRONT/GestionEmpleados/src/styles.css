@@ -1,158 +1,179 @@
 /* Estilos generales */
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    color: #ffeba7;
-    background-color: #1f2029;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  .link {
-    color: #ffeba7;
-  }
-  
-  .link:hover {
-    color: #c4c3ca;
-  }
-  
-  p {
-    font-weight: 500;
-    font-size: 14px;
-  }
-  
-  h4 {
-    font-weight: 600;
-  }
-  
-  h6 span {
-    padding: 0 20px;
-    font-weight: 700;
-  }
-  
-  .section {
-    position: relative;
-    width: 100%;
-    display: block;
-  }
-  
-  .full-height {
-    min-height: 100vh;
-  }
-  
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    display: none;
-  }
-  
-  .checkbox:checked + label,
-  .checkbox:not(:checked) + label {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 60px;
-    height: 16px;
-    border-radius: 8px;
-    padding: 0;
-    margin: 10px auto;
-    cursor: pointer;
-    background-color: #ffeba7;
-  }
-  
-  .checkbox:checked + label:before,
-  .checkbox:not(:checked) + label:before {
-    position: absolute;
-    display: block;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    color: #ffeba7;
-    background-color: #020305;
-    font-family: 'unicons';
-    content: '\eb4f';
-    z-index: 20;
-    top: -10px;
-    left: -10px;
-    line-height: 36px;
-    text-align: center;
-    font-size: 24px;
-    transition: all 0.5s ease;
-  }
-  
-  .checkbox:checked + label:before {
-    transform: translateX(44px) rotate(-270deg);
-  }
-  
-  /* Estilos para el contenedor*/
-  .registro-empleado-container {
-    margin: 20px; 
-    background-color: #2b2e38; 
-    color: #ffeba7; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    padding: 20px; 
-  }
-  
-  /* Estilos para la tabla */
-  .table {
-    background-color: #2b2e38;
-    color: #ffeba7;
-    font-size: 14px;
-  }
-  
-  .table th,
-  .table td {
-    border-color: #3a3f51;
-    padding: 12px;
-    text-align: center; 
-  }
-  
-  .table th {
-    background-color: #3a3f51;
-  }
-  
-  .table tbody tr:nth-child(odd) {
-    background-color: #313440;
-  }
-  
-  /* Estilos para el listado de empleados */
-  .lista-empleados-container {
-    margin: 20px; 
-    background-color: #2b2e38; 
-    color: #ffeba7; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    padding: 20px;
-  }
-  
-  .lista-empleados-container h2 {
-    color: #ffeba7;
-  }
-  
-  .lista-empleados-container table {
-    background-color: #2b2e38; 
-    color: #ffeba7;
-    font-size: 14px;
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    overflow: hidden; 
-  }
-  
-  .lista-empleados-container th,
-  .lista-empleados-container td {
-    border-color: #3a3f51;
-    padding: 12px; 
-    text-align: center; 
-  }
-  
-  .lista-empleados-container th {
-    background-color: #3a3f51;
-  }
-  
-  .lista-empleados-container tbody tr:nth-child(odd) {
-    background-color: #313440;
-  }
-  
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #ffeba7;
+  background-color: #1f2029;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.link {
+  color: #ffeba7;
+}
+
+.link:hover {
+  color: #c4c3ca;
+}
+
+p {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h6 span {
+  padding: 0 20px;
+  font-weight: 700;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  display: none;
+}
+
+.checkbox:checked + label,
+.checkbox:not(:checked) + label {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: #ffeba7;
+}
+
+.checkbox:checked + label:before,
+.checkbox:not(:checked) + label:before {
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffeba7;
+  background-color: #020305;
+  font-family: "unicons";
+  content: "\eb4f";
+  z-index: 20;
+  top: -10px;
+  left: -10px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+
+.checkbox:checked + label:before {
+  transform: translateX(44px) rotate(-270deg);
+}
+
+/* Estilos para el contenedor*/
+.registro-empleado-container {
+  margin: 20px;
+  background-color: #2b2e38;
+  color: #ffeba7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Estilos para la tabla */
+.table {
+  background-color: #2b2e38;
+  color: #ffeba7;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  border-color: #3a3f51;
+  padding: 12px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #3a3f51;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #313440;
+}
+
+/* Estilos para el listado de empleados */
+.lista-empleados-container {
+  margin: 20px;
+  background-color: #2b2e38;
+  color: #ffeba7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.lista-empleados-container h2 {
+  color: #ffeba7;
+}
+
+.lista-empleados-container table {
+  background-color: #2b2e38;
+  color: #ffeba7;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.lista-empleados-container th,
+.lista-empleados-container td {
+  border-color: #3a3f51;
+  padding: 12px;
+  text-align: center;
+}
+
+.lista-empleados-container th {
+  background-color: #3a3f51;
+}
+
+.lista-empleados-container tbody tr:nth-child(odd) {
+  background-color: #313440;
+}
+
+/* Estilos para botones */
+
+.lista-empleados-container .acciones-container {
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 1px solid #3a3f51; */
+}
+
+.lista-empleados-container .btn-eliminar,
+.lista-empleados-container .btn-editar {
+  border: 1px solid #ffeba7;
+  padding: 6px 12px;
+  margin: 2px;
+  vertical-align: middle;
+}
+
+/* Ajusta el ancho de la columna de acciones */
+.lista-empleados-container th:last-child,
+.lista-empleados-container td:last-child {
+  width: 160px;
+}

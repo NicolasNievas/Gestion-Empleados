@@ -65,15 +65,28 @@ export class CreateComponent implements OnInit {
   onSubmit(): void {
     if (this.empleadoForm.valid) {
       // Obtener la hora actual y formatearla como 'HH:mm'
-      const formattedTime =
-        this.datePipe.transform(new Date(), 'HH:mm') || '--:--';
-
+      const formattedTime = this.datePipe.transform(new Date(), 'HH:mm') || '--:--';
+  
       // Asignar la hora formateada al nuevo empleado
+      console.log('Cargo ID:', this.empleadoForm.get('cargoId')?.value);
+      console.log('Sucursal ID:', this.empleadoForm.get('sucursalId')?.value);
+      console.log('Jefe ID:', this.empleadoForm.get('jefeId')?.value);
+  
+      // Asignar los valores al nuevo empleado
       const nuevoEmpleado: Employee = {
-        ...this.empleadoForm.value,
-        hora: formattedTime,
+        id: 0,
+        name: this.empleadoForm.get('nombre')?.value,
+        lastName: this.empleadoForm.get('apellido')?.value,
+        charge: { id: +this.empleadoForm.get('cargoId')?.value, name: '' },
+        sucursal: { id: +this.empleadoForm.get('sucursalId')?.value, name: '', city: { id: 0, name: '' } },
+        dni: this.empleadoForm.get('dni')?.value,
+        fechaAlta: new Date(),
+        jefe: null,
+        employees: []
       };
-
+  
+      console.log('Empleado a enviar:', nuevoEmpleado);
+  
       this.rest.createEmpleado(nuevoEmpleado).subscribe(
         (response) => {
           console.log('Empleado creado con éxito:', response);
@@ -81,7 +94,7 @@ export class CreateComponent implements OnInit {
         },
         (error) => {
           console.error('Error al crear empleado:', error);
-
+  
           if (error instanceof HttpErrorResponse && error.error) {
             console.error('Detalles del error de validación:', error.error);
           }
@@ -91,4 +104,6 @@ export class CreateComponent implements OnInit {
       console.warn('Formulario no válido. Revise los campos.');
     }
   }
+  
+  
 }

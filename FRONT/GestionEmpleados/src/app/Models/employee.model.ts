@@ -27,12 +27,12 @@ export interface ChargeDTO {
     charge: ChargeDTO;
     sucursal: SucursalDTO;
     dni: string;
-    jefe?: EmployeeDTO;
+    jefe?: EmployeeDTO | null;
   }
 
   // employee.model.ts
 
-export interface Employee {
+  export interface Employee {
     id: number;
     name: string;
     lastName: string;
@@ -40,9 +40,10 @@ export interface Employee {
     sucursal: Sucursal;
     dni: string;
     fechaAlta: Date;
-    jefe?: Employee;
+    jefe: Employee | null;  // Permitir explícitamente null
     employees?: Employee[];
   }
+  
   
   export interface Charge {
     id: number;

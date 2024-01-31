@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ChargeDTO, EmployeeDTO, SucursalDTO } from '../Models/employee.model';
+import { ChargeDTO, Employee, EmployeeDTO, SucursalDTO } from '../Models/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class RestService {
   private apiGetUrl = 'https://localhost:7289/api/Gets';
   private apiCommandUrl = 'https://localhost:7289/api/Commands';
 
-  public createEmpleado(empleado: EmployeeDTO): Observable<any> {
+  public createEmpleado(empleado: Employee): Observable<any> {
     return this.httpClient.post(`${this.apiCommandUrl}/PostEmployee`, empleado);
   }
 
@@ -27,5 +27,9 @@ export class RestService {
 
   public GetSucursales(): Observable<SucursalDTO[]>{
     return this.httpClient.get<SucursalDTO[]>(`${this.apiGetUrl}/Sucursales`);
+  }
+
+  public DeleteEmployee(empleadoId: number): Observable<any> {
+    return this.httpClient.delete(`${this.apiCommandUrl}/DeleteEmployee/${empleadoId}`);
   }
 }
