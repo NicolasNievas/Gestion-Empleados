@@ -1,0 +1,42 @@
+
+  <!-- sing-up.component.html -->
+
+<div class="container mt-5">
+    <div class="registro-usuario-container">
+      <h2>Registro de Usuario</h2>
+      <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+        <div class="mb-3 input-container">
+          <label for="name" class="form-label">Nombre de Usuario:</label>
+          <input type="text" id="name" formControlName="name" class="form-control" required placeholder="Nombre de usuario">
+          <div *ngIf="Form.get('name')?.hasError('required') && Form.get('name')?.touched" class="text-danger">
+            El Nombre de usuario es requerido
+          </div>
+        </div>
+        <div class="mb-3 input-container">
+          <label for="password" class="form-label">Contraseña:</label>
+          <input type="password" id="password" formControlName="password" class="form-control" required placeholder="Contraseña" (input)="checkUppercase(); checkLowercase(); checkNumber()">
+          <div *ngIf="Form.get('password')?.hasError('required') && Form.get('password')?.touched" class="text-danger">
+            La Contraseña es requerida
+          </div>
+          <div *ngIf="Form.get('password')?.hasError('minlength') && Form.get('password')?.touched" class="text-danger">
+            La Contraseña debe tener al menos 8 caracteres
+          </div>
+          <div *ngIf="!isUppercaseValid && Form.get('password')?.value" class="text-danger">
+            La Contraseña debe tener al menos una mayúscula.
+          </div>
+          <div *ngIf="!isLowercaseValid && Form.get('password')?.value" class="text-danger">
+            La Contraseña debe tener al menos una minúscula.
+          </div>
+          <div *ngIf="!isNumberValid && Form.get('password')?.value" class="text-danger">
+            La Contraseña debe tener al menos un número.
+          </div>
+        </div>
+        <div class="form-group">
+            <span>¿Ya tienes una cuenta? </span>
+            <a routerLink="/login">Inicia Sesión</a>
+          </div>
+        <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+      </form>
+    </div>
+  </div>
+  

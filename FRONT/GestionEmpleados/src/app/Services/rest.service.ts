@@ -12,6 +12,7 @@ export class RestService {
 
   private apiGetUrl = 'https://localhost:7289/api/Gets';
   private apiCommandUrl = 'https://localhost:7289/api/Commands';
+  private apiUserUrl = 'https://localhost:7289/api/User';
 
   public createEmpleado(empleado: Employee): Observable<any> {
     return this.httpClient.post(`${this.apiCommandUrl}/PostEmployee`, empleado);
@@ -31,5 +32,13 @@ export class RestService {
 
   public DeleteEmployee(empleadoId: number): Observable<any> {
     return this.httpClient.delete(`${this.apiCommandUrl}/DeleteEmployee/${empleadoId}`);
+  }
+
+  public signUp(user: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUserUrl}/Sing_Up`, user);
+  }
+
+  public login(credentials: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUserUrl}/Login`, credentials);
   }
 }

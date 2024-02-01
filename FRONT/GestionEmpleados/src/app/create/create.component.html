@@ -1,8 +1,6 @@
-<!-- create.component.html -->
-
 <div class="container mt-5">
     <div class="registro-empleado-container">
-      <h2>Crear Empleado</h2>
+      <h2>Registrar Empleado</h2>
       <form [formGroup]="empleadoForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -51,7 +49,7 @@
             <input type="time" id="hora" formControlName="hora" class="form-control" readonly>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Crear Empleado</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
       </form>
     </div>
   </div>

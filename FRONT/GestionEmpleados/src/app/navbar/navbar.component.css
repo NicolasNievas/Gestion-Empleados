@@ -1,0 +1,10 @@
+/* navbar.component.css */
+.dropdown-menu {
+    background-color: #13151c;
+    color: #ffeba7;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #3a3f51;
+  }
+  

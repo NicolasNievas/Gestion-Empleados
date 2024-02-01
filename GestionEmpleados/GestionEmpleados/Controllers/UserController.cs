@@ -16,7 +16,7 @@ namespace GestionEmpleados.Controllers
             _mediator = mediator;
         }
         [HttpPost]
-        [Route("Sing Up")]
+        [Route("Sing_Up")]
         public async Task<ActionResult> SingUp(NewUserCommand command)
         {
             try

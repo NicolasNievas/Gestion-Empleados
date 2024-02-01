@@ -1,0 +1,39 @@
+<!-- login.component.html -->
+<div class="container mt-5">
+    <div class="login-container">
+      <h2>Iniciar Sesión</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre de Usuario:</label>
+          <input type="text" id="name" formControlName="name" class="form-control" required placeholder="Nombre de Usuario">
+          <div *ngIf="loginForm.get('name')?.hasError('required') && loginForm.get('name')?.touched" class="text-danger">
+            El Nombre de usuario es requerido
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña:</label>
+          <input type="password" id="password" formControlName="password" class="form-control" required placeholder="Contraseña" (input)="checkUppercase(); checkLowercase(); checkNumber()">
+          <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="text-danger">
+            La Contraseña es requerida
+          </div>
+          <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched" class="text-danger">
+            La Contraseña debe tener al menos 8 caracteres
+          </div>
+          <div *ngIf="!isUppercaseValid && loginForm.get('password')?.value" class="text-danger">
+            La Contraseña debe tener al menos una mayúscula.
+          </div>
+          <div *ngIf="!isLowercaseValid && loginForm.get('password')?.value" class="text-danger">
+            La Contraseña debe tener al menos una minúscula.
+          </div>
+          <div *ngIf="!isNumberValid && loginForm.get('password')?.value" class="text-danger">
+            La Contraseña debe tener al menos un número.
+          </div>        </div>
+        <div class="form-group">
+            <span>¿No tienes cuenta? </span>
+            <a routerLink="/registro">Regístrate</a>
+          </div>
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
+  

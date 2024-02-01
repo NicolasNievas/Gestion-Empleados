@@ -9,12 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
 import { CreateComponent } from './create/create.component';
+import { LoginComponent } from './login/login.component';
+import { SingUpComponent } from './sing-up/sing-up.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
-    CreateComponent
+    CreateComponent,
+    LoginComponent,
+    SingUpComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

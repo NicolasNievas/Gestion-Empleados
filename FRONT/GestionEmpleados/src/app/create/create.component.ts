@@ -64,6 +64,7 @@ export class CreateComponent implements OnInit {
 
   onSubmit(): void {
     if (this.empleadoForm.valid) {
+      
       // Obtener la hora actual y formatearla como 'HH:mm'
       const formattedTime = this.datePipe.transform(new Date(), 'HH:mm') || '--:--';
   
@@ -77,7 +78,8 @@ export class CreateComponent implements OnInit {
         id: 0,
         name: this.empleadoForm.get('nombre')?.value,
         lastName: this.empleadoForm.get('apellido')?.value,
-        charge: { id: +this.empleadoForm.get('cargoId')?.value, name: '' },
+        //charge: { id: +this.empleadoForm.get('cargoId')?.value, name: '' },
+        charge: this.cargos.find(cargo => cargo.id === +this.empleadoForm.get('cargoId')?.value) || { id: 0, name: '' },
         sucursal: { id: +this.empleadoForm.get('sucursalId')?.value, name: '', city: { id: 0, name: '' } },
         dni: this.empleadoForm.get('dni')?.value,
         fechaAlta: new Date(),
@@ -89,6 +91,7 @@ export class CreateComponent implements OnInit {
   
       this.rest.createEmpleado(nuevoEmpleado).subscribe(
         (response) => {
+          
           console.log('Empleado creado con éxito:', response);
           this.router.navigate(['/listado']);
         },
