@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RestService } from '../Services/rest.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -19,16 +20,14 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private rest: RestService,
     private router: Router
-    ) {}
+  ) {}
 
-    // En tu componente Angular
-ngOnInit(): void {
-  this.loginForm = this.fb.group({
-    name: ['', Validators.required],
-    password: ['', [Validators.required, Validators.minLength(8)]],
-  });
-}
-
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      name: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
+  }
 
   onSubmit(): void {
     console.log(this.loginForm);
@@ -37,15 +36,37 @@ ngOnInit(): void {
       this.rest.login(credentials).subscribe(
         (response) => {
           console.log('Login exitoso:', response);
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Inicio de sesión exitoso',
+            text: 'Ha iniciado sesión correctamente.',
+            showConfirmButton: false,
+            timer: 1500,
+          });
           this.router.navigate(['/listado']);
         },
         (error) => {
-          alert('El nombre de usuario y/o la contraseña son incorrectos');
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Error al iniciar sesión',
+            text: 'Hubo un error al intentar iniciar sesión. Intente nuevamente.',
+            showConfirmButton: false,
+            timer: 2000,
+          });
           console.error('Error en el login:', error);
         }
       );
     } else {
-      alert('Formulario no válido. Revise los campos.');
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Formulario no válido',
+        text: 'Revise los campos del formulario.',
+        showConfirmButton: false,
+        timer: 2000,
+      });
       console.warn('Formulario no válido. Revise los campos.');
     }
   }
@@ -64,5 +85,4 @@ ngOnInit(): void {
     const password = this.loginForm.get('password')?.value;
     this.isNumberValid = /[0-9]+/.test(password);
   }
-
 }

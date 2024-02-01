@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RestService } from '../Services/rest.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sing-up',
@@ -35,10 +36,25 @@ export class SingUpComponent implements OnInit {
       this.rest.signUp(user).subscribe(
         (response) => {
           console.log('Registro exitoso', response);
-          this.router.navigate(['/listado']);
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Usuario registrado con éxito',
+            text: 'El usuario se ha registrado correctamente.',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          this.router.navigate(['/login']);
         },
         (error) => {
-          alert('Error al registrar');
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Error al registrar',
+            text: 'Hubo un error al registrar el usuario. Intente nuevamente.',
+            showConfirmButton: false,
+            timer: 2000,
+          });
           console.error('Error al registrar', error);
         }
       );
