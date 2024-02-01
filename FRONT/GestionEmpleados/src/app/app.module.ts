@@ -12,6 +12,7 @@ import { CreateComponent } from './create/create.component';
 import { LoginComponent } from './login/login.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CreateComponent,
     LoginComponent,
     SingUpComponent,
-    NavbarComponent
+    NavbarComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
