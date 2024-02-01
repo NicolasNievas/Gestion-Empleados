@@ -32,7 +32,7 @@ export class SingUpComponent implements OnInit {
   onSubmit(): void {
     if (this.Form.valid) {
       const user = this.Form.value;
-
+  
       this.rest.signUp(user).subscribe(
         (response) => {
           console.log('Registro exitoso', response);
@@ -47,19 +47,29 @@ export class SingUpComponent implements OnInit {
           this.router.navigate(['/login']);
         },
         (error) => {
-          Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Error al registrar',
-            text: 'Hubo un error al registrar el usuario. Intente nuevamente.',
-            showConfirmButton: false,
-            timer: 2000,
-          });
           console.error('Error al registrar', error);
+          console.log('Error completo:', error);
+          if (error && error.error && error.error.error === "Validation failed: \r\n -- : El usuario ya existe Severity: Error") {
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Error al registrar',
+              text: 'El nombre de usuario ingresado ya está en uso. Por favor, elige otro nombre de usuario.',
+            });
+          } else {
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Error al registrar',
+              text: 'Hubo un error al registrar el usuario. Intente nuevamente.',
+              showConfirmButton: false,
+              timer: 2000,
+            });
+          }
         }
       );
     }
-  }
+  }  
 
   checkUppercase(): void {
     const password = this.Form.get('password')?.value;

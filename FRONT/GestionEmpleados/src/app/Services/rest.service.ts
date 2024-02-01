@@ -36,7 +36,7 @@ export class RestService {
 
   public signUp(user: any): Observable<any> {
     return this.httpClient.post(`${this.apiUserUrl}/Sing_Up`, user);
-  }
+  }  
 
   public login(credentials: any): Observable<any> {
     return this.httpClient.post(`${this.apiUserUrl}/Login`, credentials);

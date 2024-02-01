@@ -51,9 +51,9 @@ export class LoginComponent implements OnInit {
             position: 'center',
             icon: 'error',
             title: 'Error al iniciar sesión',
-            text: 'Hubo un error al intentar iniciar sesión. Intente nuevamente.',
+            text: 'El nombre de usuario y/o contraseña son incorrectos. Intente nuevamente.',
             showConfirmButton: false,
-            timer: 2000,
+            timer: 2500,
           });
           console.error('Error en el login:', error);
         }
