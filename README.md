@@ -1,4 +1,4 @@
-#Proyecto API REST .NET
+Proyecto API REST .NET
 ---------------------------------------------------------------------------------
 Un proyecto el cual es una práctica de desarrollo de APIs en .NET Core
 
@@ -10,8 +10,8 @@ Este proyecto tiene como objetivo simular el desarrollo fullstack de una empresa
 
 -Se aplicó el patrón Mediator, con la extensión MediaTR
 
-#Login
-
+Login
+---------------------------------------------------------------------------------
 Este proyecto cuenta con un Login basico y funcional el cual es necesario para poder acceder a las funciones del proyecto, en caso de no tener cuenta te podras registrar y luego iniciar sesion 
 
 ![image](https://github.com/NicolasNievas/Gestion-Empleados/assets/111009234/a18a4323-97d6-4e91-9f43-3d14f61101f4)
